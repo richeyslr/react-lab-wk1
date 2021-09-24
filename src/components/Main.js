@@ -3,11 +3,14 @@ import HornedBeasts from './HornedBeasts'
 import data from './data.json'
 
 export default class Main extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
-        <div>
+        <div className='cont'>
           {data.map((item)=>{
-         return  <HornedBeasts title={item.title} img_url={item.image_url} description={item.description} />
+         return  <HornedBeasts selectBeast={this.props.selectBeastModal} title={item.title} img_url={item.image_url} description={item.description} />
      })}
         </div>
     )
